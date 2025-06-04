@@ -1,7 +1,12 @@
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
+set smartindent
+set softtabstop=4
+
 set number
+set relativenumber
 
 set splitbelow
 set splitright
@@ -44,7 +49,7 @@ endfunction
 " Highlight all permanently when searching
 set hls
 set smartcase
-set nowrap
+
 
 set laststatus=2
 
