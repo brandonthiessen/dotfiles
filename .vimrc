@@ -1,3 +1,4 @@
+syntax on
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -45,11 +46,9 @@ function! ToggleTopFolds()
 endfunction
 
 
-
 " Highlight all permanently when searching
 set hls
 set smartcase
-
 
 set laststatus=2
 
