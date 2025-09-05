@@ -51,6 +51,9 @@ endfunction
 
 " Highlight all permanently when searching
 set hls
+
+" Incremental search
+set is
 set smartcase
 
 set laststatus=2
@@ -58,16 +61,17 @@ set laststatus=2
 " Show the visual PEP8 compliance indicator (only in python files)
 autocmd FileType python setlocal colorcolumn=80
 
-highlight ColorColumn ctermbg=236
+highlight ColorColumn ctermbg=200
 
 call plug#begin('~/.vim/plugged')
 
 " Example plugin: coc.nvim for LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call plug#end()
+" shades-of-purple color scheme to match the terminal
+Plug 'Rigellute/shades-of-purple.vim'
 
-" https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.vim
+call plug#end()
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
@@ -90,15 +94,14 @@ set signcolumn=yes
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ coc#pum#visible() ? coc#pum#confirm() :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Navigate completion menu like arrow keys (VSCode-style)
+inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+
 
 function! CheckBackspace() abort
   let col = col('.') - 1
@@ -231,3 +234,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_diagnostic_enable = 1
 let g:coc_diagnostic_check_current_line = 1
+set termguicolors
+colorscheme shades_of_purple
+hi Normal guibg=#121225
+hi LineNr guibg=#121225
+highlight SignColumn guibg=#121225
