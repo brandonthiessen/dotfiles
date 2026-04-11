@@ -1,7 +1,0 @@
-[tool.ruff]
-
-preview = true
-
-line-length = 79
-
-lint.select = ["E", "W", "E225", "E231", "E303", "F401", "F841"] 
