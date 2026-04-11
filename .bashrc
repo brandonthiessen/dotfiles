@@ -98,7 +98,22 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # start up starship
 export PATH="/opt/homebrew/bin:$PATH"
 eval "$(starship init bash)"
 eval "$(starship preset pure-preset -o ~/.config/starship.toml)"
+
+# Run neofetch on startup
+#$(which neofetch)
+
+# Open neovim instead of vi or vim
+alias vim="nvim"
+alias vi="nvim"
+alias vimdiff="nvim -d"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+export PATH="$HOME/.local/bin:$PATH"
