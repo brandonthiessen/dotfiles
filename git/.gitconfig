@@ -1,0 +1,9 @@
+[color]
+	ui = auto
+[user]
+	name = ProbablyNotBrandon
+	email = brandonthiessen2005@gmail.com
+[includeIf "gitdir:~/uoft/"]
+    path = ~/.gitconfig-uoft
+[core]
+    editor = nvim
