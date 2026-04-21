@@ -50,6 +50,9 @@ vim.cmd("colorscheme tokyonight-night")
 -- Remove the background
 vim.cmd("hi Normal guibg=NONE")
 
+-- Match SignColumn to background
+vim.cmd("hi SignColumn guibg=NONE")
+
 -- ==============================
 -- JS/TS Indentation
 -- ==============================
