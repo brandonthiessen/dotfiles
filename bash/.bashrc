@@ -113,6 +113,8 @@ alias vim="nvim"
 alias vi="nvim"
 alias vimdiff="nvim -d"
 
+alias tmux="tmux -u"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
 
