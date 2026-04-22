@@ -75,3 +75,19 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         vim.fn.jobstart({ "latexmk", "-pdf", "-pvc" }, { detach = true })
     end,
 })
+
+
+-- ==============================
+-- OSC 52 (Clipboard)
+-- ==============================
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}

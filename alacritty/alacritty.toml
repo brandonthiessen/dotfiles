@@ -20,3 +20,6 @@ bindings = [
 [window.padding]
 x = 4
 y = 2
+
+[terminal]
+osc52 = "CopyPaste"
