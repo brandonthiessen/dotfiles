@@ -1,0 +1,22 @@
+general.import = [
+  "%APPDATA%\\alacritty\\tokyo-night.toml"
+]
+
+[font]
+normal = { family = "JetBrains Mono", style = "Regular" }
+bold = { family = "JetBrains Mono", style = "Bold" }
+italic = { family = "JetBrains Mono", style = "Italic" }
+size = 12.0
+
+[terminal.shell]
+program = "ssh"
+args = ["brandon@192.168.2.83"]
+
+[keyboard]
+bindings = [
+  { key = "F11", action = "ToggleFullscreen" }
+]
+
+[window.padding]
+x = 4
+y = 2
