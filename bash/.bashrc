@@ -100,8 +100,17 @@ fi
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Homebrew (macOS)
+if [ -d "/opt/homebrew/bin" ]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+
+# Local binaries (Linux/WSL)
+if [ -d "/usr/local/bin" ]; then
+  export PATH="/usr/local/bin:$PATH"
+fi
+
 # start up starship
-export PATH="/opt/homebrew/bin:$PATH"
 eval "$(starship init bash)"
 eval "$(starship preset pure-preset -o ~/.config/starship.toml)"
 
