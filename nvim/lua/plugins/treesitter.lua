@@ -6,6 +6,9 @@ return {
     build = ":TSUpdate",
     lazy = false,
     config = function()
+
+      require("nvim-treesitter.install").prefer_git = true
+
       local ts_ok, ts = pcall(require, "nvim-treesitter")
       if not ts_ok then
         vim.notify("nvim-treesitter not loaded!", vim.log.levels.ERROR)
