@@ -15,19 +15,28 @@ link () {
     ln -sfn "$src" "$dest"
 }
 
-echo "==> Linking shell configs"
+echo "==> Linking bash configs"
 link "$DOTFILES_DIR/bash/.bashrc" "$HOME/.bashrc"
 link "$DOTFILES_DIR/bash/.bash_profile" "$HOME/.bash_profile"
 echo
 
-echo "==> Linking editor configs"
+echo "==> Linking Vim configs"
 link "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
+echo
+
+echo "==> Linking Neovim configs"
 mkdir -p "$HOME/.config"
 link "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 echo
 
-echo "==> Linking terminal tools"
+echo "==> Linking Ghostty configs"
+link "$DOTFILES_DIR/ghostty" "$HOME/.config/ghostty"
+echo
+
+echo "==> Linking tmux configs"
 link "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
+link "$DOTFILES_DIR/tmux/.tmux" "$HOME/.tmux"
+mkdir -p "$HOME/.tmux/plugins"
 echo
 
 echo "==> Linking git configs"
