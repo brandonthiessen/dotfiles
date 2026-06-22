@@ -30,6 +30,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 vim.opt.mouse = ""
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- ==============================
 -- Plugins
