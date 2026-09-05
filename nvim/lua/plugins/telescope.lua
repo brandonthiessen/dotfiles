@@ -28,10 +28,20 @@ return {
             vim.keymap.set("n", "<leader>ff", function()
                 builtin.find_files({
                     hidden = true,
+                })
+            end)
+            vim.keymap.set("n", "<leader>fF", function()
+                builtin.find_files({
+                    hidden = true,
                     no_ignore = true,
                 })
             end)
             vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+            vim.keymap.set("n", "<leader>fG", function()
+                builtin.live_grep({
+                    additional_args = { "--no-ignore" },
+                })
+            end)
             vim.keymap.set("n", "<leader>fb", builtin.buffers)
             vim.keymap.set("n", "<leader>fh", builtin.help_tags)
         end,
