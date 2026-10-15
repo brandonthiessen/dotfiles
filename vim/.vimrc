@@ -30,3 +30,4 @@ set incsearch
 set smartcase
 set nobackup
 set nowritebackup
+set laststatus=2
