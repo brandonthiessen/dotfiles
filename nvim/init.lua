@@ -63,17 +63,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- ==============================
--- LaTeX autocompilation
--- ==============================
-vim.api.nvim_create_autocmd("BufReadPost", {
-    pattern = "*.tex",
-    callback = function()
-        vim.fn.jobstart({ "latexmk", "-pdf", "-pvc" }, { detach = true })
-    end,
-})
-
-
--- ==============================
 -- OSC 52 (Clipboard)
 -- ==============================
 vim.g.clipboard = {
