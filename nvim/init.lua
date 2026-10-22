@@ -47,20 +47,7 @@ require("lazy").setup("plugins", {
 -- ==============================
 -- Colors
 -- ==============================
-vim.cmd("colorscheme catppuccin-mocha")
-
--- Fix highlighting issues
-vim.cmd("hi Normal guibg=NONE")
-vim.cmd("hi SignColumn guibg=NONE")
-vim.cmd("hi NormalFloat guibg=NONE")
-vim.cmd("hi StatusLine guibg=NONE")
-vim.cmd("hi Pmenu guibg=NONE")
-
--- Fix floating panel highlighting issues
-local hl = vim.api.nvim_get_hl(0, { name = "Normal" })
-local bg = hl.bg and string.format("#%06x", hl.bg) or "#0f111a"
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = bg })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = bg })
+require("config.theme")
 
 -- ==============================
 -- JS/TS Indentation
