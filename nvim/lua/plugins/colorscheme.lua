@@ -1,4 +1,3 @@
--- ~/.config/nvim/lua/plugins/colorscheme.lua
 return {
     -- Tokyo Night
     {
