@@ -1,3 +1,10 @@
+vim.lsp.config("clangd", {
+    cmd = {
+        "clangd",
+        "--header-insertion=never",
+    },
+})
+
 return {
     {
         "saghen/blink.cmp",
