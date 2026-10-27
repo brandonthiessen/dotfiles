@@ -34,6 +34,29 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- ==============================
+-- LSP Diagnostics
+-- ==============================
+vim.o.updatetime = 300
+
+vim.diagnostic.config({
+    float = {
+        border = "rounded",
+        source = "if_many",
+        header = "",
+        prefix = "",
+    },
+})
+
+vim.api.nvim_create_autocmd("CursorHold", {
+    callback = function()
+        vim.diagnostic.open_float({
+            focus = false,
+            scope = "cursor",
+        })
+    end,
+})
+
+-- ==============================
 -- Plugins
 -- ==============================
 require("lazy").setup("plugins", {
